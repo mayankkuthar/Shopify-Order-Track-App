@@ -1,7 +1,13 @@
 {
   "functions": {
     "pages/api/**/*.js": {
-      "maxDuration": 10
+      "maxDuration": 30
     }
-  }
+  },
+  "crons": [
+    {
+      "path": "/api/email-notifications",
+      "schedule": "0 9 */3 * *"
+    }
+  ]
 }
