@@ -147,12 +147,6 @@ export default function OrderTracker() {
                   {result.custom_status.message}
                 </span>
               </div>
-              {result.custom_status.days !== undefined && (
-                <div className="order-detail">
-                  <span className="label">Days in Current Stage:</span>
-                  <span className="value">{result.custom_status.days} days</span>
-                </div>
-              )}
             </div>
 
             {/* Order Progress Timeline */}
