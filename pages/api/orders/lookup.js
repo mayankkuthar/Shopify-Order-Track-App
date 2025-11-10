@@ -78,10 +78,10 @@ async function getCustomOrderStatus(order, daysSinceOrder, isZipAndGoOrder) {
     // Zip & GO Sarees timeline
     if (daysSinceOrder < 1) return { stage: 'received', message: 'Order Received', days: 0 };
     if (daysSinceOrder < 3) return { stage: 'received', message: 'Order Received', days: daysSinceOrder };
-    if (daysSinceOrder < 6) return { stage: 'production', message: 'In Production', days: daysSinceOrder - 3 };
-    if (daysSinceOrder < 15) return { stage: 'stitching', message: 'In Stitching', days: daysSinceOrder - 6 };
-    if (daysSinceOrder < 21) return { stage: 'finishing', message: 'Finishing & Packing', days: daysSinceOrder - 15 };
-    return { stage: 'dispatched', message: 'Dispatched', days: daysSinceOrder - 21 };
+    if (daysSinceOrder < 9) return { stage: 'production', message: 'In Production', days: daysSinceOrder - 3 };
+    if (daysSinceOrder < 15) return { stage: 'stitching', message: 'In Stitching', days: daysSinceOrder - 9 };
+    if (daysSinceOrder < 23) return { stage: 'finishing', message: 'Finishing & Packing', days: daysSinceOrder - 15 };
+    return { stage: 'dispatched', message: 'Dispatched', days: daysSinceOrder - 23 };
   } else {
     // Normal Shopify order status
     if (order.fulfillment_status === 'fulfilled') {
